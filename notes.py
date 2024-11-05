@@ -212,7 +212,46 @@
 # def say_goodbye():
 #     return 'goodbye there'
 
-# Section 8
+# Section 8 Query String Parameters
+# You know what a query string is: data that comes into a URL via a GET request.
+# This video will show you how Reddit and Google handle incoming query strings on the back-end.
+
+# GET and POST
+# Requests
+# Flask provides an object, request, to represent web requests
+    # from flask import request
+
+# Handling Query Arguments
+# For a url like /search?term=fun
+# @app.route("/search")
+# def search():
+#     """Handle GET requests like /search?term=fun"""
+
+#     term = request.args["term"]
+#     return f"<h1>Searching for {term}</h1>"
+
+# this is what was covered in the video:
+
+# @app.route('/search')
+# def search():
+#     # print(request.args) # ImmutableMultiDict([]) is the output in the terminal which is like an empty obj
+    
+#     # if you type something into the search bar like:
+#     # http://127.0.0.1:5000/search?term=dog&start=top
+#     # it will now output this in the terminal:
+#     # ImmutableMultiDict([('term', 'dog'), ('start', 'top')]) 
+#     # now obj has key and values pairs
+#     # return 'search page'
+#     # after commenting out the print(request.args) and return 'search page' you can set the term to be equal to something
+#     # use term to find db data that matches term
+#     term = request.args['term']
+#     sort = request.args['sort'] # will now require sort in the web browers link. 
+#     return f'<h1>Search Results For: {term}</h1> <p>Sorting by: {sort}</p>' 
+#     # so if you input http://127.0.0.1:5000/search?term=cat&start=top
+#     # it will output Search Results For: cat
+#     # so now if you input: http://127.0.0.1:5000/search?term=cat&sort=top
+#     # you will get Search Results For: cat Sorting by: top
+#     # if you tried with start=top you will get an error. 
 
 # Section 9
 
@@ -220,5 +259,5 @@
 
 # Section 11
 
-# Section 12
+
 
