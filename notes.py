@@ -229,6 +229,7 @@
 
 #     term = request.args["term"]
 #     return f"<h1>Searching for {term}</h1>"
+# request.args is a dict-like object of query parameters.
 
 # this is what was covered in the video:
 
@@ -253,11 +254,13 @@
 #     # you will get Search Results For: cat Sorting by: top
 #     # if you tried with start=top you will get an error. 
 
-# Section 9
+# Section 9 POST Requests
+# Now that you can handle GET requests, we'll teach you how the back-end processes data from a POST request. 
 
-# Section 10
 
-# Section 11
+# Section 10 Path Variables
+
+# Section 11 More On Route Parameters
 
 
 
