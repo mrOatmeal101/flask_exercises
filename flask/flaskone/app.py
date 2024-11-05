@@ -85,7 +85,7 @@ def add_comment_form():
     <h1>Add Comment</h1>
     <form method="POST">
         <input type='text" placeholder='comment' name='comment'/>
-        <input type='text" placeholder='username' name='comment'/>
+        <input type='text" placeholder='username' name='username'/>
         <button>Submit</button>
     </form>
 """
@@ -97,7 +97,7 @@ def save_comment():
     # print(request.form)
     username = request.form['username']
     return f"""
-    <h1> Saved Your Comment with the text of</h1>
+    <h1>Saved Your Comment with the text of</h1>
     <ul>
         <li>Username: {username}</li>
         <li>Comment: {comment}</li>
