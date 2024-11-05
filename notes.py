@@ -47,7 +47,36 @@
 # Response
 # Web Browser <--String of HTML <html>..<html> -- Web Server (app.py)
 
-# Section 4
+# Section 4 Flask and Other Frameworks
+# Flask is the tool we will be using in python to create web servers. 
+# it is possible to create web server w/o a framework but it is very time consumming. 
+
+# Flask is a Web Framework
+# Set of functions, classes, etc. that help you define
+    # Which requests to respond to
+        # http://server/about-us
+        # http://server/post/1
+    # How to respond to requests
+        # Shows an “About Us” page
+        # Show the 1st blog post
+# Like a library, but bigger and more opinionated, i.e. has rules and a structure you need to follow.
+# Usage is similar to the Python Standard Library.
+
+# Using the Python Standard Library
+# from random import choice, randint
+ 
+# Using Flask
+# from flask import Flask, request
+
+# What Do Web Applications Need To Do?
+    # handle web requests
+    # produce dynamic HTML
+    # handle forms
+    # handle cookies
+    # connect to databases
+    # provide user log-in/log-out
+    # cache pages for performance
+    # & more!
 
 # Section 5
 
