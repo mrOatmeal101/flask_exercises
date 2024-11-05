@@ -12,6 +12,15 @@
 # Flask is what is called a microframework, which means that it provides more minimalistic functionality than an enterprise framework.
 
 # Section 2
+# python, js, html, cs & all the other langs, are the building blocks to making a web page.
+# Flask is a framework that allows you to use these building blocks to make web pages.
+
+# Goals - Web Development with Python
+# Describe the purpose and responsibilities of a web framework
+# Build small web applications using Python and Flask
+# Set environmental variables for local Flask development
+# Handle GET and POST requests with Flask
+# Extract data from different parts of the URL with Flask
 
 # Section 3
 
