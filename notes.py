@@ -257,6 +257,37 @@
 # Section 9 POST Requests
 # Now that you can handle GET requests, we'll teach you how the back-end processes data from a POST request. 
 
+# Handling POST Requests
+# By default, a route only responds to GET requests
+# To accept POST requests, must specify that:
+# @app.route("/my/route", methods=["POST"]) # add in an argument called methods. 
+# inside of methods which is a list, and inside of methods we specify POST, which can have multiple different http verbs.
+# "GET","POST" so it would get both.
+# def handle_post_to_my_route():
+#    ...
+
+# Example POST Request
+# @app.route("/add-comment")
+# def add_comment_form():
+#     """Show form for adding a comment."""
+
+#     return """
+#       <form method="POST">
+#         <input name="comment">
+#         <button>Submit</button>
+#       </form>
+#       """
+
+# @app.route("/add-comment", methods=["POST"])
+# def add_comment():
+#     """Handle adding comment."""
+
+#     comment = request.form["comment"]
+
+#     # TODO: save that into a database!
+
+#     return f'<h1>Received "{comment}".</h1>'
+# request.form is a dict-like object of POST parameters.
 
 # Section 10 Path Variables
 

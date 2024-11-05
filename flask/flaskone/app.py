@@ -60,3 +60,54 @@ def search():
     # so now if you input: http://127.0.0.1:5000/search?term=cat&sort=top
     # you will get Search Results For: cat Sorting by: top
     # if you tried with start=top you will get an error. 
+
+# @app.route('/post', methods= ['POST', "GET"])
+# def post_demo():
+#     return 'you made a post request' # you need "GET" or it will now allow you to access it. 
+# output on the web page is: you made a post request, which is a lie as you made a GET request. 
+
+# to make an actual POST request: you type | curl -X POST http://127.0.0.1:5000/post
+    # make sure your server is running and type this into a new ubuntu window. 
+    # you made a post requestmroatmeal@TinyOat:~/Sect_19/19.1_FlaskIntro/flask/flaskone$ is the output on the terminal.
+# you can seperate the POST and GET methods to:
+# @app.route('/post', methods= ['POST'])
+# def post_demo():
+#     return 'you made a POST request'
+
+# @app.route('/post', methods= ['GET'])
+# def post_demo():
+#     return 'you made a GET request'
+
+# To serve a form:
+@app.route('/add-comment')
+def add_comment_form():
+    return """
+    <h1>Add Comment</h1>
+    <form method="POST">
+        <input type='text" placeholder='comment' name='comment'/>
+        <input type='text" placeholder='username' name='comment'/>
+        <button>Submit</button>
+    </form>
+"""
+
+# this is what happens after you hit the submit button
+@app.route('/add-comment', methods= ['POST'])
+def save_comment():
+    comment= request.form['comment'] # this is refering to the name='comment' in the /add-comment route above. 
+    # print(request.form)
+    username = request.form['username']
+    return f"""
+    <h1> Saved Your Comment with the text of</h1>
+    <ul>
+        <li>Username: {username}</li>
+        <li>Comment: {comment}</li>
+    </ul>
+    """
+
+# so now after you type something into the input box and hit submit you will get:
+# Saved Your Comment with the text of: cat # i typed in cat in the comment box. 
+# afer you at the username plachoder: and type james into the input box 
+# you will get this on the terminal side:
+# ImmutableMultiDict([('comment', 'i like cats'), ('comment', 'james')])
+# and this on the web browser side(i typed i like cats):
+# Saved Your Comment with the text of: i like cats
