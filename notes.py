@@ -138,7 +138,79 @@
 # Or you can configure your .profile which is in the root directory file to always run in development mode. 
 # just paste export FLASK_ENV=development  & export FLASK_DEBUG=1 at the bottom of the file and save and close.
 
-# Section 7
+# Section 7 Adding Routes
+# One of the core concepts of back-end web development is writing code that listens for HTTP requests and acts in response to them.
+# listening for a request from /dogs /whatever
+
+# Making Responses
+# A function that returns web response is called a view
+
+# Response is a string
+# Usually, a string of HTML
+# So, our function returns an HTML string:
+
+# @app.route('/hello')
+# def say_hello():
+#     """Return simple "Hello" Greeting."""
+
+#     html = "<html><body><h1>Hello</h1></body></html>"
+#     return html
+
+# So on the app.py file we added
+    # @app.route('/hello')
+    # def say_hello():
+    #     return 'hello there'
+# so that when we go to the web browser and type: http://127.0.0.1:5000/hello
+# the web page now displays 'hello there' in the top left corner. 
+# flask is taking care of the http request - it is setting the status code and making the text a header. 
+
+# More detail on how flask works and how you get an html style web page back. 
+# Flask Files Determine HTTP Response: The route handlers and templates you define in your Flask application determine what 
+# content is included in the HTTP response.
+
+# Dynamic Responses: Flask allows for both static responses (plain text or HTML) and dynamic responses (using templates) based on 
+# user input or other data.
+
+# Structured Communication: Flask handles the entire communication process, responding to HTTP requests with the appropriate 
+# content and structure as defined in your application code.
+
+# Jinja2 is a powerful templating engine that enables developers to create dynamic HTML pages easily. 
+# It combines static HTML with Python logic, allowing for the generation of dynamic content based on user data or other parameters. 
+# Its features like variable interpolation, control structures, template inheritance, filters, and macros make it an essential tool for 
+# building web applications with Flask and other frameworks.
+
+# all of the below are static/hard coded routes but you can use dynamic routes. 
+# This is how you set the home directory or the home page or root directory
+# @app.route('/')
+# def home_page():
+#     html = """
+#     <html>
+#         <body>
+#         <h1>Home Page</h1>
+#             <p>smimple server example using flask</p>
+#             <a href = '/hello'>Go to hello page</a> 
+#         </body>
+#     </html>
+#     """
+#     return html
+
+# # can format it in html
+# @app.route('/hello')
+# def say_hello():
+#     html = """
+#     <html>
+#         <body>
+#         <h1>Hello!</h1>
+#             <p>this is the hello page</p>
+#         </body>
+#     </html>
+#     """
+#     return html
+
+# # simple example of a webpage
+# @app.route('/goodbye')
+# def say_goodbye():
+#     return 'goodbye there'
 
 # Section 8
 
