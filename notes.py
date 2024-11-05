@@ -120,7 +120,23 @@
 # FLASK_APP=app.py is passing an “environmental variable”
 # Only has this meaning while this program is running
 
-# Section 6
+# Section 6 Development Mode
+# Development Mode
+# Better to run Flask in “development mode”:
+
+# Much better error messages
+# Automatically re-loads server when code changes on disk
+# Both of these are very helpful when developing–and very bad for working on a live, production server.
+# (venv) $ FLASK_ENV=development flask run
+
+# Setting Environmental Variables
+# Can set FLASK_DEV once per terminal session:
+# (venv) $ export FLASK_ENV=development | this line will make it so you dont have to type FLASK_ENV=development flask run every time you run the server.
+# though if you go to another window or quit the server you will have to retype | export FLASK_ENV=development | in the new window.
+# Add that line to shell config to run on every new terminal session.
+
+# Or you can configure your .profile which is in the root directory file to always run in development mode. 
+# just paste export FLASK_ENV=development  & export FLASK_DEBUG=1 at the bottom of the file and save and close.
 
 # Section 7
 
