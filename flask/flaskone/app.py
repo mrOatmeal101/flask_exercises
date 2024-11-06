@@ -111,3 +111,24 @@ def save_comment():
 # ImmutableMultiDict([('comment', 'i like cats'), ('comment', 'james')])
 # and this on the web browser side(i typed i like cats):
 # Saved Your Comment with the text of: i like cats
+
+@app.route('/r/<subreddit>') # will throw error as flask auto makes <subreddit> an argument and tries to put it into show_subreddit() - is a keyword argument.
+def show_subreddit(subreddit): # so this arg needs to match exactly the route name
+    # return "this is a subreddit"
+    return f"<h1>Browsing the {subreddit} Subreddit</h1>" # Browsing the kitties Subreddit
+
+# another common route path
+# first making a data structure, in the form of a dictionary, to store the data
+POSTS = {
+    1: "I like kitties",
+    2: "i like dogs",
+    3: "double rainbow all the way",
+    4: "orange amps"
+}
+
+@app.route('/posts/<int:id>') # does not work at first b/c it reads the keys as the string of 1,2,3,4. So you put int: id to make an int.
+def find_posts(id):
+    # post = POSTS[id] # this is the original way we did it 
+    post = POSTS.get(id, "Post Not Found") # This is the 2nd way and now adding logic for if there is no post found like if you put 5 in. 
+    # the "Post Not Found" is the default value if it cant find the key 
+    return f"<p>{post}</p>" # put in browser http://127.0.0.1:5000/posts/3 # just change to number to access different values. 
