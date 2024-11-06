@@ -132,3 +132,12 @@ def find_posts(id):
     post = POSTS.get(id, "Post Not Found") # This is the 2nd way and now adding logic for if there is no post found like if you put 5 in. 
     # the "Post Not Found" is the default value if it cant find the key 
     return f"<p>{post}</p>" # put in browser http://127.0.0.1:5000/posts/3 # just change to number to access different values. 
+
+# Can have more than one variable in a single route:
+@app.route('/r/<subreddit>/comments/<post_id>')
+def show_comments(subreddit, post_id): 
+    return f"<h1>Viewing comments for post with id: {post_id} form the {subreddit} Subreddit</h1>" # Browsing the kitties Subreddit
+# web browers input: http://127.0.0.1:5000/r/kitties/comments/33
+# web page output: Viewing comments for post with id: 33 form the kitties Subreddit
+# http://127.0.0.1:5000/r/cats/comments/kitties
+# Viewing comments for post with id: kitties form the cats Subreddit

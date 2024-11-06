@@ -337,6 +337,45 @@
 # Converts to integer when calling function
 
 # Section 11 More On Route Parameters
+# There's so much more to Route Parameters! Now that you've got the basics, we'll show you how Flask 
+# can handle path variables automatically with the right datatype.
 
+# Can have more than one:
 
+# @app.route("/products/<category>/<int:product_id>")
+# def product_detail(category, product_id):
+#    """Show detail page for product."""
 
+#    ...
+
+# Query Params vs URL Params
+# http://toys.com/shop/spinning-top?color=red
+
+# @app.route("/shop/<toy>")
+# def toy_detail(toy):
+#     """Show detail about a toy."""
+#     # Get color from req.args, falling back to None
+#     color = request.args.get("color")
+#     return f"<h1>{toy}</h1>Color: {color}"
+
+# Which Should I Use?
+# URL Parameter
+# /shop/<toy>
+# Feels more like “subject of page”
+ 
+# Query Parameter
+# /shop?toy=elmo
+# Feels more like “extra info about page”
+# Often used when coming from form
+
+# Looking Ahead
+    # Coming Up
+    # HTML templates
+    # Handling cookies
+    # APIs and Flask
+    # Using databases with Flask
+    # Auto-generating forms
+    # Handling users and log in
+
+# Flask Documentation
+    # The Flask documentation (http://flask.pocoo.org/)
